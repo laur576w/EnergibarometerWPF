@@ -23,7 +23,7 @@
         <TextBlock FontSize="40" FontWeight="Bold" TextAlignment="Center" Text="Energibarometer" Grid.Column="1"/>
         
         <!-- Error textBlock -->
-        <TextBlock x:Name="Error" Grid.Row="3" Grid.Column="1"  Text=""/>
+        <TextBlock x:Name="Error" Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" Text=""/>
 
         <!-- Buttons left side start-->
         <StackPanel Margin="10"  Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Right">
@@ -36,9 +36,9 @@
         </StackPanel>
         <!-- Buttons left side end-->
 
-        
+        <!-- Persons -->
         <StackPanel Grid.Column="1" Grid.Row="1" Margin="10" Height="60" Width="100" VerticalAlignment="Top" HorizontalAlignment="Left">
-            <TextBlock Text="Dit navn" />
+            <TextBlock Text="Navn" />
             <TextBox x:Name="Name"/>
         </StackPanel>
 
