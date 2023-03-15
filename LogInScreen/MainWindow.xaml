@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LogInScreen"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        WindowState="Maximized" >
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
@@ -21,15 +22,29 @@
         <TextBlock x:Name="Error"  Grid.Column="1" MinHeight="100"/>
 
         <StackPanel Grid.Row="1" Grid.Column="1" Width="150" Margin="10">
-            <TextBlock Text="Brugernavn" />
+            <!-- Username -->
+            <TextBlock Text="Brugernavn(Unilogin)" />
             <TextBox x:Name="Username"/>
-
+               <!-- Password -->
+            <StackPanel x:Name="StackPass">
+                
             <TextBlock Text="Adgangskode" Margin="0 10 0 0"/>
             <PasswordBox x:Name="Password"/>
-
-
+            </StackPanel>
         </StackPanel>
-        <Button  Content="Log in" Width="70" Height="25" Grid.Column="1" Grid.Row="1" VerticalAlignment="Bottom" Margin="0 0 100 70"/>
-        <Button Content="Lav konto" Width="70" Height="25" Grid.Column="1" Grid.Row="1" VerticalAlignment="Bottom" Margin="0 0 -100 70"/>
+
+        <StackPanel x:Name="Names" Grid.Row="1" Grid.Column="1" Width="150" Margin="10 55 10 0" Visibility="Hidden">
+            <TextBlock Text="Fornavn" />
+            <TextBox x:Name="Firstname"/>
+
+            <TextBlock Text="Efternavn"  Margin="0 10 0 0"/>
+            <TextBox x:Name="Lastname"/>
+        </StackPanel>
+             
+        <!-- Log in -->
+        <Button  Content="Log in" Width="70" Height="25" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Margin="0 110 100 0"/>
+        
+        <!-- Create new account -->
+        <Button Content="Lav konto" Width="70" Height="25" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Margin="0 110 -100 0" Click="Button_Click"/>
     </Grid>
 </Window>

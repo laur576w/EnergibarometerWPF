@@ -18,8 +18,23 @@ namespace LogInScreen {
 	/// Interaction logic for MainWindow.xaml
 	/// </summary>
 	public partial class MainWindow : Window {
+
+		public int i = 0;
+
 		public MainWindow() {
 			InitializeComponent();
+		}
+
+
+		private void Button_CreateAccount_Click(object sender, RoutedEventArgs e) {
+			if (i >= 0) {
+				StackPass.Visibility = Visibility.Hidden;
+				Names.Visibility = Visibility.Visible;
+				i++;
+			}
+			else {
+				//create Person
+			}
 		}
 	}
 }
