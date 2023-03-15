@@ -24,7 +24,7 @@ namespace Energibarometer {
 		}
 
 		private void NumberOneToFive(object sender, TextCompositionEventArgs e) {
-			Regex regex = new Regex("[^1-5]+");
+			Regex regex = new Regex("[^1-5]");
 			e.Handled = regex.IsMatch(e.Text);
 		}
 
