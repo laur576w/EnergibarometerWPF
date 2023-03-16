@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Energibarometer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" MinHeight="450" MinWidth="800">
+        Title="MainWindow" Height="450" Width="800" MinHeight="450" MinWidth="800" Initialized="OnInitialized">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150"/>
@@ -20,47 +20,44 @@
         </Grid.RowDefinitions>
         
         <!-- Title -->
-        <TextBlock FontSize="40" FontWeight="Bold" TextAlignment="Center" Text="Energibarometer" Grid.Column="1" Height="70" VerticalAlignment="Bottom"/>
+        <TextBlock FontSize="40" FontWeight="Bold" TextAlignment="Center" Text="Energibarometer" Grid.ColumnSpan="3" Height="70" VerticalAlignment="Bottom"/>
         
         <!-- Error textBlock -->
         <TextBlock x:Name="Error" Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" Text=""/>
 
         <!-- Buttons left side -->
-        <StackPanel Margin="10"  Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Right">
-            <Button Content="Opret Person" Height="30" Click="Button_UploadPerson_Click"/>
-            <Button Content="Updater Person" Height="30" Margin="0 10 0 0" Click="Button_UpdatePerson_Click"/>
-            <Button Content="Slet Person"  Height="30"  Margin="0 10 0 0" Click="Button_DeletePerson_Click"/>
+        <StackPanel Margin="10"  Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Right">
+            
+            <Button Content="Updater Navn" Height="30" Margin="0 0 0 0" Click="Button_UpdatePerson_Click"/>
+            
             
             <Button Content="Opret Hændelse"  Height="30" Margin="0 20 0 0" Click="Button_UploadIncident_Click"/>
             <Button Content="Updater Hændelse" Height="30" Margin="0 10 0 0" Click="Button_UpdateIncident_Click"/>
             <Button Content="Slet Hændelse"  Height="30"  Margin="0 10 0 0" Click="Button_DeleteIncident_Click"/>
+
+            <Button Content="Log ud" Height="30" Margin="0 50"/>
         </StackPanel>
 
-        <!-- FirstName  -->
-        <StackPanel Grid.Column="1" Grid.Row="1" Margin="10" Height="60" Width="100" VerticalAlignment="Top" HorizontalAlignment="Left">
-            <TextBlock Text="Fornavn" />
-            <TextBox x:Name="FirstName"/>
+        <!-- Name  -->
+        <StackPanel Grid.Column="1" Grid.Row="1" Margin="10" Height="60" Width="260" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <TextBlock Text="Navn" />
+            <TextBox x:Name="Name"/>
         </StackPanel>
         
-        <!-- LastName-->
-        <StackPanel Grid.Column="1" Grid.Row="1" Margin="130 10 10 10" Height="60" Width="100" VerticalAlignment="Top" HorizontalAlignment="Left">
-            <TextBlock Text="Efternavn" />
-            <TextBox x:Name="LastName"/>
-        </StackPanel>
 
         <!-- Energy & Description -->
-        <StackPanel Grid.Column="1" Grid.Row="1" Margin="10 70 10 10" Width="260" HorizontalAlignment="Left">
+        <StackPanel Grid.Column="1" Grid.Row="1" Margin="10 70 10 10" Width="260" HorizontalAlignment="Center">
             <TextBlock Text="Hvad føler du dit energiniveu er fra 1(lav)-5(høj)" TextWrapping="Wrap"/>
             <TextBox x:Name="Energy" TextAlignment="Center" TextWrapping="Wrap" Width="40" HorizontalAlignment="Left" PreviewTextInput="NumberOneToFive"/>
             
             <TextBlock Text="Aktivitet og årsag" Margin="0 10 0 0" TextWrapping="Wrap"/>
             <TextBox x:Name="Description" MinHeight="50" TextWrapping="WrapWithOverflow"/>
+
+            <TextBlock Text="Har det haft in -1, 0 eller 1 effekt" Margin=" 0 10 0 0" TextWrapping="Wrap"/>
+            <TextBox x:Name="EnergyEffect" />
         </StackPanel>
 
-        <!-- PersonList -->
-        <TextBlock Text="Personliste" Width="100" Grid.Column="1"  Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10"/>
-        <ListBox x:Name="PersonsList" Grid.Column="1"  Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="100" Margin="10 30 10 10"/>
-
+        
         <!-- IncidentList-->
         <TextBlock Text="Hændelseliste" Grid.Column="2" Grid.Row="1" Margin="10" />
         <ListBox x:Name="IncidentList" Grid.Column="2" Grid.Row="1" Margin="10 30 10 10"/>

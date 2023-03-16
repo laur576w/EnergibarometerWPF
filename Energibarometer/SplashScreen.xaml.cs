@@ -45,10 +45,8 @@ namespace Energibarometer {
 					Person = new(id, Name.Text.Trim(), "", "", "", "", "", "");
 					Database.UploadPerson(Person);
 					Database.TryClose();
-					MainWindow win1 = new MainWindow();
-					win1.Incidents = Incidents;
-					win1.Database = Database;
-					win1.Person = Person;
+					MainWindow win1 = new MainWindow(Person, Incidents);
+					
 					win1.Show();
 					Close();
 
@@ -84,10 +82,7 @@ namespace Energibarometer {
 				Person = Database.GetPersonsById((int)id, (string)Password.Password.ToString());
 				Incidents = Database.GetIncidentsById((int)id, (string)Password.Password.ToString());
 				Database.TryClose();
-				MainWindow win1 = new MainWindow();
-				win1.Incidents = Incidents;
-				win1.Database = Database;
-				win1.Person = Person;
+				MainWindow win1 = new MainWindow(Person, Incidents);
 				win1.Show();
 				Close();
 			}
