@@ -94,7 +94,7 @@ namespace Energi {
 			return TheIncidents;
 		}
 		public void UploadPerson(Person NewPerson) {
-			string SQL = $"INSERT INTO Person (Id, Name, EnergiLevel1, EnergiLevel2, EnergiLevel3, EnergiLevel4, EnergiLevel5, GeneralStrategy) VALUES ({NewPerson.ID} , '{NewPerson.Name}', '{NewPerson.EnergiLevel1}', '{NewPerson.EnergiLevel2}', '{NewPerson.EnergiLevel3}', '{NewPerson.EnergiLevel4}', '{NewPerson.EnergiLevel5}', '{NewPerson.GeneralStrategy}');";
+			string SQL = $"INSERT INTO Person (Name, EnergiLevel1, EnergiLevel2, EnergiLevel3, EnergiLevel4, EnergiLevel5, GeneralStrategy) VALUES ('{NewPerson.Name}', '{NewPerson.EnergiLevel1}', '{NewPerson.EnergiLevel2}', '{NewPerson.EnergiLevel3}', '{NewPerson.EnergiLevel4}', '{NewPerson.EnergiLevel5}', '{NewPerson.GeneralStrategy}');";
 			SqlCommand Command = new SqlCommand(SQL, Connection);
 
 			List<Person> Persons = this.GetPersons();

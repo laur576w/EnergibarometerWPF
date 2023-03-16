@@ -83,8 +83,7 @@ namespace Energi {
 			}
 		}
 
-		public Incident(int iD_, int personID_, int energi_, int incidentEffect_, string activityAndCauses_, DateTime time_) {
-			ID = iD_;
+		public Incident( int personID_, int energi_, int incidentEffect_, string activityAndCauses_, DateTime time_) {
 			PersonID = personID_;
 			Energi = energi_;
 			IncidentEffect = incidentEffect_;
