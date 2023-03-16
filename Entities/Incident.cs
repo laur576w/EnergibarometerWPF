@@ -83,12 +83,17 @@ namespace Energi {
 			}
 		}
 
-		public Incident( int personID_, int energi_, int incidentEffect_, string activityAndCauses_, DateTime time_) {
+		public Incident(int iD_, int personID_, int energi_, int incidentEffect_, string activityAndCauses_, DateTime time_) {
+			ID = iD_;
 			PersonID = personID_;
 			Energi = energi_;
 			IncidentEffect = incidentEffect_;
 			ActivityAndCauses = activityAndCauses_;
 			Time = time_;
+		}
+
+		public Incident( int personID_, int energi_, int incidentEffect_, string activityAndCauses_, DateTime time_) : this (0, personID_, energi_, incidentEffect_, activityAndCauses_, time_){
+			
 		}
 	}
 }
