@@ -37,6 +37,9 @@ namespace Energibarometer {
 
 		public void UpdateLabels() {
 			Error.Text = "";
+			Energy.Text = "";
+			EnergyEffect.Text = "";
+			Description.Text = "";
 		}
 
 		private void NumberOneToFive(object sender, TextCompositionEventArgs e) {
@@ -57,8 +60,8 @@ namespace Energibarometer {
 			try {
 				Database.TryOpen();
 				LogInTest();
-				int.TryParse(Energy.Text, out int energy);
-				int.TryParse(EnergyEffect.Text, out int energyEffect);
+				int.TryParse(Energy.Text.Trim(), out int energy);
+				int.TryParse(EnergyEffect.Text.Trim(), out int energyEffect);
 				Incident incident = new Incident(Person.ID, (int)energy, (int)energyEffect, (string)Description.Text, DateTime.Now);
 				Database.UploadIncident(incident);
 				Incidents = Database.GetIncidentsById((int)Person.ID, (string)Person.Name);
@@ -71,7 +74,7 @@ namespace Energibarometer {
 				Database.TryClose();
 			}
 			catch (Exception) {
-				Error.Text = "Unknown error.";
+				Error.Text = "Couldn't create unknown effect. ";
 				Database.TryClose();
 			}
 

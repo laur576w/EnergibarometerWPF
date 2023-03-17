@@ -45,7 +45,7 @@
         </StackPanel>
         
 
-        <!-- Energy & Description -->
+        <!-- Energy, EnergyEffect & Description -->
         <StackPanel Grid.Column="1" Grid.Row="1" Margin="10 70 10 10" Width="260" HorizontalAlignment="Center">
             <TextBlock Text="Hvad føler du dit energiniveu er fra 1(lav)-5(høj)" TextWrapping="Wrap"/>
             <TextBox x:Name="Energy" TextAlignment="Center" TextWrapping="Wrap" Width="40" HorizontalAlignment="Left" PreviewTextInput="NumberOneToFive"/>
